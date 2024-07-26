@@ -30,7 +30,7 @@
         "lint:types": "turbo lint:types",
         "test": "turbo test -- --passWithNoTests",
         "coverage": "turbo coverage -- --passWithNoTests",
-        "build": "turbo build --concurrency=50% --filter=!./common/* && pnpm --filter @univerjs/umd build:umd",
+        "build": "NODE_OPTIONS=--max_old_space_size=2048 turbo build --concurrency=50% --filter=!./common/* && pnpm --filter @univerjs/umd build:umd",
         "build:demo": "pnpm --filter univer-examples build:demo",
         "build:e2e": "pnpm --filter univer-examples build:e2e",
         "serve:e2e": "serve ./examples/local",
